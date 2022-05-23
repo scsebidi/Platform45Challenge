@@ -1,0 +1,563 @@
+
+html {
+  user-select: none;
+}
+
+h1, h2 {
+  color: #383838;
+}
+
+.centerXY {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.centerX{
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#main {
+  position: absolute;
+  width: 90vw;
+  max-width: 140vh;
+  height: calc(90vw/1.55);
+  max-height: 90vh;
+  border-radius: 3vw;
+}
+
+#form {
+  width: 61%;
+  height: 100%;
+  border-radius: 0 3vw 3vw 0;
+  float: right;
+  background-color: white;
+}
+
+#content {
+  position: absolute;
+  width: 62%;
+  height: 99.8%;
+  background-color: #ff9200;
+  left: -10.8%;
+  transform: scaleX(0.6);
+  border-radius: 3vw 0 0 3vw;
+}
+
+@keyframes animateContentHidden {
+  from {
+    left: 38.1%;
+    transform: scaleX(1.0);
+    border-radius: 0 3vw 3vw 0;
+      }
+  to {
+    left: -10.8%;
+    transform: scaleX(0.6);
+    border-radius: 3vw 0 0 3vw;
+  }
+}
+
+.contentHidden {
+  animation-name: animateContentHidden;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animateContentShown {
+  from {
+    left: -10.8%;
+    transform: scaleX(0.6);
+    border-radius: 3vw 0 0 3vw;
+  }
+  to {
+    left: 38.1%;
+    transform: scaleX(1.0);
+    border-radius: 0 3vw 3vw 0;
+  }
+}
+
+.contentShown {
+  animation-name: animateContentShown;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+#facePanel {
+  position: absolute;
+  width: 39%;
+  height: 100%; 
+  border-radius: 3vw 0 0 3vw;
+  background-color: #ffd500;
+}
+
+.arrow {
+  position: absolute;
+  background-color: #383838;
+  width: 5.45%;
+  height: 3.3%;
+  padding: 3.3%;
+  border-radius: 50%;
+  bottom: 13%;
+  transition: 0.7s;
+}
+
+.arrowRotate {
+  transform: rotate(-180deg);
+}
+
+#face {
+  position: absolute;
+  width: 44.3%;
+  top: 17.5%;
+}
+
+#faceTitle, #contentTitle {
+  font-size: 2.4vw;
+}
+
+#faceTitle {
+  position: relative;
+  text-align: center;
+  font-size: 2.4vw;
+  top: 56%;
+}
+
+#faceBody {
+  position: absolute;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 400;
+  width: 64%;
+  line-height: 130%;
+  top: 66%;
+}
+
+#contentTitle {
+  position: relative;
+  width: 72%;
+  top: 16%;
+}
+
+#contentBody {
+  position: relative;
+  width: 72%;
+  top: 18%;
+  font-size: 1.2vw;
+  font-weight: 200;
+  line-height: 150%;
+}
+
+table {
+  position: relative;
+  left: 18%;
+  top: 11%;
+}
+
+td {
+  width: 9vw;
+  height: 4.2vw;
+  font-size: 1vw;
+}
+
+.formInputFields {
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f5f8f9;
+  width: 25vw;
+  height: 3.6vw;
+  box-sizing: border-box;
+  padding: 0 1.5vw 0 1.5vw;
+}
+
+input:focus {
+  border: 2px solid #d7e1e5;
+  background-color: #fcfcfd;
+}
+
+input {
+  color: #b2c0ce;
+  font-family: sans-serif;
+  font-size: 1.2vw;
+}
+
+#formMembership {
+  width: 27%;
+}
+
+.formOptionsCol {
+  width: 4vw;
+  color: #b2c0ce;
+}
+
+.formGenderIcon {
+  position: relative;
+  width: 37%;
+  height: 35.3%;
+  padding: 0.9vw;
+  background-color: #f5f8f9;
+  border-radius: 50%;
+}
+
+.formCardIcon {
+  position: relative;
+  width: 53%;
+  height: 50%;
+  padding: 0.7vw;
+  background-color: #f5f8f9;
+  border-radius: 50%;
+}
+
+::-webkit-calendar-picker-indicator {
+  background-image: url('./assets/img/calendar.svg');
+  height: 45%;
+  width: 6%;
+}
+
+#formNavButtonContainer {
+  position: absolute;
+  bottom: 12%;
+  width: 27%;
+  height: 5.7%;
+  display: flex;
+  right: 9%;
+}
+
+.formNavButtons {
+  position: relative;
+  font-size: 1.1vw;
+  font-weight: 200;
+  width: 33%;
+  text-align: center;
+  border-radius: 4px;
+  color: #fff;
+  padding: 5%;
+  margin-right: 6%;
+}
+
+#formCancel {
+  background-color: #f5f8f9;
+  color: #383838;
+}
+
+#formSave {
+  background-color: #60e6c5;
+}
+
+#resizeMask {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+#resizeMask > h1:first-child {
+  text-align: center;
+}
+
+.selectedImgBackColor {
+  background-color: #b1bfcd;
+}
+
+/*Mobile Portrait layout*/
+@media (orientation: portrait) {
+
+  body {
+    overflow: visible;
+    overflow-x: hidden;
+  }
+
+  #main {
+    width: 100vw;
+    height: 200vh;
+    max-width: unset;
+    max-height: unset;
+    margin: 0;
+  }
+
+  table {
+    left: 8%;
+    top: 5%;
+  }
+
+  input {
+    font-size: 3.6vw;
+  }
+
+  td {
+    font-size: 4vw;
+  }
+
+  #form > td:first-child {
+    margin-left: 10%;
+  }
+
+  .formInputFields {
+    width: 67vw;
+    height: 11.6vw;
+    margin: auto;
+    top: 52%;
+    left: -10%;
+  }
+
+  #formNameInput {
+    margin-left: 10%;
+  }
+
+  #formNavButtonContainer { 
+      bottom: 11vh;
+      width: 100%;
+      height: 5.7%;
+      display: block;
+      right: unset;
+  }
+
+  .formGenderIcon {
+    width: 46%;
+    height: 100%;
+    padding: 0.7vh;
+  }
+
+  #formGender {
+    width: 17vw;
+  }
+
+  .formGenderIcon {
+    width: 3vw;
+    height: 65%;
+    padding: 2vw;
+  }
+
+  .formOptionsCol {
+    width: 5vw;
+  }
+
+  .formCardIcon {
+    width: 63%;
+    height: 100%;
+    padding: 1.4vw;
+  }
+
+  .formOptionsCol {
+    width: 5vw;
+  }
+  .formCardIcon {
+    width: 69%;
+    height: 100%;
+    padding: 0.6vh;
+  }
+
+  .formNavButtons {
+    position: relative;
+    font-size: 4.1vw;
+    font-weight: 200;
+    margin: 1% auto;
+    width: 90%;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4%;
+  }
+
+  #facePanel {
+    width: 100%;
+    height: 100vh;
+    border-radius: unset;
+  }
+
+  #face {
+    width: 28vh;
+    top: 10vh;
+  }
+
+  #faceTitle {
+    font-size: 10vw;
+    top: 42vh;
+    width: 80%;
+  }
+
+  #faceBody {
+    font-size: 6vw;
+    font-weight: 600;
+    width: 71%;
+    top: 59%;
+  }
+
+  .arrow {
+    width: 3.5vh;
+    height: 3.5vh;
+    transform: rotate(90deg);
+  }
+
+  .arrowRotate {
+    transform: rotate(-90deg);
+  }
+
+  #content {
+    width: 100%;
+    height: 50%;
+    left: 0;
+    transform: initial;
+    border-radius: 0;
+  }
+
+  #contentTitle {
+    font-size: 12vw;
+    margin: 3vw;
+    width: unset;
+    top: 6%;
+  }
+
+  #faceTitle {
+    font-size: 12.4vw;
+  }
+
+  #contentBody {
+    width: 92%;
+    top: 9%;
+    font-size: 4.2vw;
+    font-weight: 400;
+    margin: 3vw;
+  }
+
+  @keyframes animateContentShown {
+    from {
+      top: 0%;
+    }
+    to {
+      top: 50%;
+    }
+  }
+
+  @keyframes animateContentHidden {
+    from {
+      top: 50%;
+        }
+    to {
+      top: 0%;
+    }
+  }
+
+  #form {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    border-radius: unset;
+    float: unset;
+    background-color: white;
+  }
+}
+
+/*When screen is more square than the layout design supplied*/
+@media (min-aspect-ratio: 155/100) {
+
+  input {
+    font-size: 1.85vh;
+  }
+
+  #form {
+    border-radius: 0 4.7vh 4.7vh 0;
+  }
+
+  @keyframes animateContentHidden {
+    from {
+      left: 38.1%;
+      transform: scaleX(1.0);
+      border-radius: 0 4.7vh 4.7vh 0;
+        }
+    to {
+      left: -10.8%;
+      transform: scaleX(0.6);
+      border-radius: 4.7vh 0 0 4.7vh;
+    }
+  }
+
+  @keyframes animateContentShown {
+    from {
+      left: -10.8%;
+      transform: scaleX(0.6);
+      border-radius: 4.7vh 0 0 4.7vh;
+    }
+    to {
+      left: 38.1%;
+      transform: scaleX(1.0);
+      border-radius: 0 4.7vh 4.7vh 0;
+    }
+  }
+
+  #facePanel {
+    border-radius: 4.7vh 0 0 4.7vh;
+  }
+
+  #faceTitle, #contentTitle, #faceTitle {
+    font-size: 3.73vh;
+  }
+
+  #faceBody {
+    font-size: 2.32vh;
+  }
+
+  #contentBody {
+    font-size: 1.86vh;
+  }
+
+  td {
+    width: 13.95vh;
+    height: 6.52vh;
+    font-size: 1.55vh
+  }
+
+  .formInputFields {
+    width: 38.71vh;
+    height: 5.6vh;
+  }
+
+  .formOptionsCol {
+    width: 6.2vh;
+  }
+
+  .formGenderIcon {
+    padding: 1.55vh;
+  }
+
+  .formCardIcon {
+    padding: 1.09vh;
+  }
+
+  .formNavButtons {
+    font-size: 1.72vh;
+  }
+}
+
+/*Screen resize promts*/
+@media (max-height: 300px) and (orientation: portrait) { 
+  #main{
+    display: none;
+  }
+  #resizeMask {
+    display: initial;
+  }
+}
+
+@media (max-width: 300px) { 
+  #main{
+    display: none;
+  }
+  #resizeMask {
+    display: initial;
+  }
+}
+
+/*Tablets not yet supported*/
+@media (orientation: portrait) and (min-aspect-ratio: 10/16) {
+   #main{
+    display: none;
+  }
+  #resizeMask {
+    display: initial;
+  }
+}
